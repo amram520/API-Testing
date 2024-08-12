@@ -49,8 +49,7 @@ public class bookApiTests {
     @SneakyThrows
     public void bookByIdTest() {
         String id = "2";
-        String accept ="*/*";
-        Call<String> call = bookService.bookById(accept, id);
+        Call<String> call = bookService.bookById(id);
         Response<String> response = call.execute();
         System.out.println(response);
         System.out.println(response.body());
