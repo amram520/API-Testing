@@ -13,5 +13,5 @@ public class RootRequest {
     private String name;
     private String birth;
     private String email;
-    private Guardian guardian;
+//    private Guardian guardian;
 }

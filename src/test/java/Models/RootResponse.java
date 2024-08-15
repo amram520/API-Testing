@@ -13,6 +13,6 @@ public class RootResponse {
     private int id;
     private String name;
     private String birth;
-    private String email;
-    private Guardian guardian;
+//    private String email;
+//    private Guardian guardian;
 }

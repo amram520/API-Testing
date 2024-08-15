@@ -1,21 +1,13 @@
 package Tests;
 
 import Endpoints.BookService;
-import Endpoints.UserService;
-import Models.RootBookResponse;
 import lombok.SneakyThrows;
 import net.javacrumbs.jsonunit.assertj.JsonAssertions;
-import okhttp3.OkHttpClient;
-import okhttp3.internal.tls.OkHostnameVerifier;
 import org.json.JSONObject;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -53,6 +45,8 @@ public class bookApiTests {
         Response<String> response = call.execute();
         System.out.println(response);
         System.out.println(response.body());
+        JsonAssertions.assertThatJson(response.body()).node("bookingdates").node("checkin").isEqualTo("2022-06-12");
+
         assertThat(response.code()).isEqualTo(200);
     }
 

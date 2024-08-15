@@ -62,7 +62,7 @@ public class petApiTest {
     @Test
     @SneakyThrows
     public void getStudentTest() throws IOException {
-        Long id = 2L;
+        Long id = 6L;
         Response<String> response = userServices.getStudent(id).execute();
         System.out.println(response);
         System.out.println(response.body());
@@ -73,11 +73,11 @@ public class petApiTest {
     @Test
     @SneakyThrows
     public void createStudentTest() throws IOException {
-        Guardian guardian = new Guardian("eli", "088065454");
-        RootRequest rootRequest = new RootRequest("boki", "2003-07-11", "sdfds@gmail.com", guardian);
+//        Guardian guardian = new Guardian("eli", "088065454");
+        RootRequest rootRequest = new RootRequest("boki", "2003-07-11", "sdfds@gmail.com");
       Response<RootResponse> response = userService.createStudent(rootRequest).execute();
-        System.out.println(response);
-        System.out.println(response.body());
+        System.out.println("response");
+        System.out.println(response.body().getName());
         assertThat(response.code()).isEqualTo(200);
         assertThat(response.body().getName())
                 .isNotEmpty()
