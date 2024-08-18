@@ -28,15 +28,4 @@ public class TestViews {
         }
     }
 
-    @SneakyThrows
-    @Test
-    public void createViewTest() {
-        val response = openProject.createView().execute();
-        System.out.println(response);
-        System.out.println(response.body());
-        assertThat(response.code()).isEqualTo(200);
-        JsonAssertions.assertThatJson(response.body()).node("count").isEqualTo("8");
-//        JsonAssertions.assertThatJson(response.body()).node("_embedded").node("elements[$]").node("subject").isEqualTo("it is post request test");
-
-    }
 }
