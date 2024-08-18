@@ -1,4 +1,4 @@
-package Endpoints;
+package userServices;
 
 import Models.RootRequest;
 import Models.RootResponse;
@@ -16,19 +16,6 @@ public interface UserService {
 
     @GET("/api/users/2")
     Call<String> updateUser();
-
-
-    @POST("/school")
-    Call<RootResponse> createStudent(@Body RootRequest student);
-
-    @POST("/school")
-    Call<String> createStudent2(@Body RootRequest student);
-
-    @GET("/getAll")
-    Call<List<RootResponse>> getAllStudents();
-
-    @GET("/department/{id}")
-    Call<String> getStudent(@Path("id") Long id);
 
 
 }

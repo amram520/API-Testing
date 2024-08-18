@@ -1,4 +1,4 @@
-package org.OpenProject;
+package org.openProjectServices;
 
 import lombok.Getter;
 import lombok.SneakyThrows;
@@ -13,10 +13,9 @@ import java.net.URL;
 public class OpenProject {
 
 
-    private OpenProjectService openProjectService;
-    private AutoConfig cfg = org.aeonbits.owner.ConfigFactory.create(AutoConfig.class);
     @SneakyThrows
-    public OpenProject(){
+    public static <T> T createService(final Class<T> service){
+        AutoConfig cfg = org.aeonbits.owner.ConfigFactory.create(AutoConfig.class);
         OkHttpClient.Builder okHttp = new OkHttpClient.Builder().addInterceptor(
                 new BasicAuthInterceptor("apikey", cfg.apiKey()));
         Retrofit retrofit = new Retrofit.Builder()
@@ -24,7 +23,7 @@ public class OpenProject {
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .client(okHttp.build())
                 .build();
-        this.openProjectService = retrofit.create(OpenProjectService.class);
+        return retrofit.create(service);
     }
 
 }

@@ -87,6 +87,12 @@
         <artifactId>owner</artifactId>
         <version>1.0.4</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/com.networknt/json-schema-validator -->
+    <dependency>
+        <groupId>com.networknt</groupId>
+        <artifactId>json-schema-validator</artifactId>
+        <version>1.5.0</version>
+    </dependency>
 
 </dependencies>
 </project>

@@ -1,6 +1,4 @@
-package Endpoints;
-
-import Models.StoreResponse;
+package org.petServices;
 import retrofit2.Call;
 import retrofit2.http.*;
 
@@ -9,7 +7,7 @@ public interface PetService {
 //    @GET("pet/findByStatus")
 //    Call<PetRootResponse> addPet(@Query("status") String petStatus) ;
 
-    @POST("/pet")
+    @POST("pet")
     Call<String> createPet(@Body String pet);
 
     @GET("/store/inventory")

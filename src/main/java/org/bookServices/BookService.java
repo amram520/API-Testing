@@ -1,6 +1,5 @@
-package Endpoints;
+package org.bookServices;
 
-import Models.RootBookResponse;
 import retrofit2.Call;
 import retrofit2.http.*;
 
@@ -13,8 +12,9 @@ public interface BookService {
     @GET("/booking/{id}")
     Call<String> bookById(@Path("id") String i);
 
-    @PUT("/booking/{id}")
-    Call<String> updateBook(@Path("id") int i);
+    @Headers({"Content-Type: application/json","Accept: application/json"})
+    @PUT("booking/{id}")
+    Call<String> updateBook(@Path("id") int i, @Body String body);
 
 
 }

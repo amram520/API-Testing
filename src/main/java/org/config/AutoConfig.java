@@ -12,4 +12,14 @@ public interface AutoConfig extends Config {
     @Key("api.key")
     String apiKey();
 
+    @Key("book.base.url")
+    @DefaultValue("https://restful-booker.herokuapp.com/")
+    String bookBaseUrl();
+
+    @Key("book.password")
+    String bookPassword();
+
+    @Key("student.base.url")
+    String studentBaseUrl();
+
 }

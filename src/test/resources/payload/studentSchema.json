@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string"
+    },
+    "birth": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "guardian": {}
+  },
+  "required": [
+    "id",
+    "name",
+    "birth",
+    "email",
+    "guardian"
+  ]
+}
