@@ -33,8 +33,6 @@ public class TestProjects {
         val response = openProject.getProjectSchema().execute();
         System.out.println(response);
         System.out.println(response.body());
-//        JsonAssertions.assertThatJson(response.body()).node("name").isEqualTo("TestProject1");
-//        JsonAssertions.assertThatJson(response.body()).node("description").node("raw").isEqualTo("**This is the first test project**");
         assertThat(response.code()).isEqualTo(200);
         SchemaValidator.schemaValidate(response.body(),"projectSchema");
     }

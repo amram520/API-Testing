@@ -20,11 +20,12 @@ public class TestWorkPackages {
     @Test
     public void getWorkPackagesByProjectTest(){
         int id = 3;
+         int s = 9;
         val response = openProject.getWorkPackagesByProjectId(3).execute();
         System.out.println(response);
         System.out.println(response.body());
         assertThat(response.code()).isEqualTo(200);
-        JsonAssertions.assertThatJson(response.body()).node("_embedded").node("elements[9]").node("subject").isEqualTo("it is post request test");
+        JsonAssertions.assertThatJson(response.body()).node("_embedded").node("elements["+s+"]").node("subject").isEqualTo("it is post request test");
     }
 
     @SneakyThrows
