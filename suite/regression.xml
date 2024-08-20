@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<suite name ="IMDB">
-<!--    <listeners>-->
-<!--        <listener class-name="listeners.TestNGListeners"/>-->
-<!--    </listeners>-->
-    <test name = "searchMovieTest111">
-<!--        <parameter name="typeOfMoviesOptions" value="Top 250 Movies"/>-->
-<!--        <parameter name="browser" value="chrome"/>-->
+<suite name ="API Test">
+    <test name = "openProject api tests">
         <classes>
             <class name ="e2e.openProjectTests.TestWorkPackages"/>
         </classes>
