@@ -1,4 +1,4 @@
-package e2e.tests;
+package e2e.apiTests;
 
 import e2e.petServices.PetService;
 import e2e.userServices.UserService;

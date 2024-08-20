@@ -1,8 +1,7 @@
-package e2e.tests;
+package e2e.apiTests;
 
 import e2e.TestCase;
 import e2e.userServices.UserService;
-import il.co.topq.difido.model.Enums;
 import lombok.SneakyThrows;
 import net.javacrumbs.jsonunit.assertj.JsonAssertions;
 import org.json.JSONObject;

@@ -1,4 +1,4 @@
-package e2e.tests;
+package e2e.apiTests;
 
 import org.testng.annotations.Test;
 import static net.javacrumbs.jsonunit.assertj.JsonAssertions.assertThatJson;

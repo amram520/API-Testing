@@ -1,4 +1,4 @@
-package e2e.tests;
+package e2e.apiTests;
 
 import lombok.val;
 import e2e.bookServices.Book;

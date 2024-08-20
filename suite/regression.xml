@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<suite name ="API Test">
-    <test name = "openProject api tests">
+<suite name ="openProject API tests">
+    <test name = "TestWorkPackages api tests">
         <classes>
             <class name ="e2e.openProjectTests.TestWorkPackages"/>
         </classes>
