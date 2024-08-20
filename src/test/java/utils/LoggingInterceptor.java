@@ -1,4 +1,4 @@
-package e2e.openProjectServices;
+package utils;
 
 import e2e.TestCase;
 import il.co.topq.difido.model.Enums;

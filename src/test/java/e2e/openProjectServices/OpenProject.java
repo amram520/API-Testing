@@ -8,6 +8,7 @@ import org.config.AutoConfig;
 import utils.BasicAuthInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
+import utils.LoggingInterceptor;
 
 import java.net.URL;
 @Getter
