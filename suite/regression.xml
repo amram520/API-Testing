@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<suite name ="IMDB">
+<!--    <listeners>-->
+<!--        <listener class-name="listeners.TestNGListeners"/>-->
+<!--    </listeners>-->
+    <test name = "searchMovieTest111">
+<!--        <parameter name="typeOfMoviesOptions" value="Top 250 Movies"/>-->
+<!--        <parameter name="browser" value="chrome"/>-->
+        <classes>
+            <class name ="OpenProjectTests.TestWorkPackages"/>
+        </classes>
+    </test>
+</suite>
