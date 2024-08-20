@@ -8,7 +8,7 @@
 <!--        <parameter name="typeOfMoviesOptions" value="Top 250 Movies"/>-->
 <!--        <parameter name="browser" value="chrome"/>-->
         <classes>
-            <class name ="OpenProjectTests.TestWorkPackages"/>
+            <class name ="e2e.openProjectTests.TestWorkPackages"/>
         </classes>
     </test>
 </suite>
