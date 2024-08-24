@@ -20,7 +20,6 @@ public class WorkPackagesPage {
     }
 
     public String validateNavigation(){
-        System.out.println(validateNavigation.textContent());
         return validateNavigation.textContent();
     }
 

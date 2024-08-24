@@ -21,7 +21,6 @@ public class ProjectPage {
     }
 
     public String validateNavigation(){
-        System.out.println("#####"+validateNavigation.textContent());
         return validateNavigation.textContent();
     }
 }
