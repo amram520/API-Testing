@@ -24,7 +24,7 @@ public class TestReports extends TestCase {
         report.addRunProperty("Build", "1.0.12");
 //        report.addImage(new File("screenshot.png"), "My screenshot");
 //        report.addFile(new File("system.log"), "System log file");
-        report.startLevel("Messages will be hidden in this level");
+        report.startLevel("<b>Messages will be hidden in this level</b>");
         report.log("Message 1 in toggle");
         report.log("Message 2 in toggle");
         report.log("Message 3 in toggle");

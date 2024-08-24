@@ -41,7 +41,6 @@ public class LoggingInterceptor extends TestCase implements Interceptor {
             report.log("Response headers:", response.headers().toString());
             report.endLevel();
         }
-        System.out.println(response.body().string());
         return response;
 
     }
