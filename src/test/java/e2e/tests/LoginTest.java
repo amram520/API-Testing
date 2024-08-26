@@ -12,7 +12,7 @@ import java.nio.file.Paths;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static utils.Utilities.getScreenShot;
 
-public class LoginTest extends BaseTest{
+public class LoginTest extends configTest{
 
     LoginPage loginPage;
 
@@ -24,8 +24,8 @@ public class LoginTest extends BaseTest{
         report.addImage(new File("./snapshot/loginPage.png"), "Login page");
         report.startLevel("Performing login");
         loginPage = new LoginPage(page);
-        loginPage.typeUsername();
-        loginPage.typePassword();
+        loginPage.typeUsername(cfg.openProjectUsername());
+        loginPage.typePassword(cfg.openProjectPassword());
         loginPage.clickSignInButton();
         assertThat(page).hasTitle("OpenProject");
         getScreenShot(page, "homePage");

@@ -2,8 +2,10 @@ package e2e.pages;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import e2e.TestCase;
+import il.co.topq.difido.model.Enums;
 
-public class ProjectPage {
+public class ProjectPage extends TestCase {
 
     private Page page;
     private Locator toolBar;
@@ -18,6 +20,7 @@ public class ProjectPage {
 
     public void selectFromToolBar(String selection){
         toolBar.filter(new Locator.FilterOptions().setHasText(selection)).click();
+        report.log("select from tool bar", Enums.Status.success);
     }
 
     public String validateNavigation(){

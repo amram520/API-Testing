@@ -17,23 +17,23 @@ public class LoginPage extends TestCase {
     private Locator username;
     private  Locator password;
     private Locator sighInButton;
-    private AutoConfig cfg;
+
 
     public LoginPage(Page page){
     this.page = page;
     this.username = page.locator("#username");
     this.password = page.locator("id=password");
     this.sighInButton =  page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Sign in"));
-    this.cfg = org.aeonbits.owner.ConfigFactory.create(AutoConfig.class);
+
     }
 
-    public void typeUsername(){
-        username.fill("admin");
+    public void typeUsername(String user){
+        username.fill(user);
         report.log("Type into username field", Enums.Status.success);
     }
 
-    public void typePassword(){
-        password.fill(cfg.openProjectPassword());
+    public void typePassword(String pass){
+        password.fill(pass);
         report.log("Type into password field", Enums.Status.success);
     }
 

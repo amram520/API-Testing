@@ -21,11 +21,9 @@ public class HomePage extends TestCase {
 
     public void selectProject(String projectName){
         selectProject.click();
-        report.startLevel("Performing navigation to project page");
         report.log("Click on projects button", Enums.Status.success);
-      Locator  projectsList = page.locator("//span[@class = 'spot-list--item-title spot-list--item-title_ellipse-text']",
-                new Page.LocatorOptions().setHasText(projectName));
-      projectsList.click();
+        page.locator("//span[@class = 'spot-list--item-title spot-list--item-title_ellipse-text']",
+                new Page.LocatorOptions().setHasText(projectName)).click();
       report.log("select project", Enums.Status.success);
     }
 

@@ -22,7 +22,12 @@ public interface AutoConfig extends Config {
     @Key("student.base.url")
     String studentBaseUrl();
 
+    @Key(("openProject.username"))
+    String openProjectUsername();
+
     @Key("openProject.password")
     String openProjectPassword();
 
+    @Key(("openProject.url"))
+    String url();
 }

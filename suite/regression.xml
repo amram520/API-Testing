@@ -4,12 +4,11 @@
     <test name = "TestWorkPackages api tests">
         <classes>
             <class name ="e2e.tests.LoginTest"/>
+        </classes>
+    </test>
+    <test name = "TestWorkPackages api tests2">
+        <classes>
             <class name ="e2e.tests.CreateWorkPackageTest"/>
         </classes>
     </test>
-<!--    <test name = "TestWorkPackages api tests2">-->
-<!--        <classes>-->
-<!--            <class name ="e2e.tests.CreateWorkPackageTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
 </suite>
