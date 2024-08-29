@@ -15,13 +15,13 @@ import java.nio.file.Paths;
 
 public class BaseTest extends TestCase {
 
-    protected Page page;
+    static Page page;
     protected AutoConfig cfg;
-    Browser browser;
-    Playwright playwright;
-    BrowserContext context;
+     Browser browser;
+     Playwright playwright;
+     BrowserContext context;
 
-    @BeforeTest
+    @BeforeMethod
     public void inits() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
@@ -31,10 +31,11 @@ public class BaseTest extends TestCase {
         this.cfg = org.aeonbits.owner.ConfigFactory.create(AutoConfig.class);
         page.navigate(cfg.url());
 
+
     }
 
     @SneakyThrows
-    @AfterTest
+    @AfterMethod
     public void closeBrowser() {
 //        String path = System.getProperty("user.dir");
 //        String testName = result.getMethod().getMethodName();
@@ -46,6 +47,7 @@ public class BaseTest extends TestCase {
 //        if (Files.exists(isFileExist)) {
 //            Files.delete(isFileExist);
             playwright.close();
+
 //        }
 
     }

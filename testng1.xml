@@ -2,7 +2,7 @@
 
 <suite name ="openProject tests">
     <listeners>
-        <listener class-name="Listeners.TestNGListeners"/>
+        <listener class-name="e2e.tests.TestNGListeners"/>
     </listeners>
     <test name = "Create work package test">
         <classes>

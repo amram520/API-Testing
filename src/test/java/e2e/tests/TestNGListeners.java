@@ -1,4 +1,4 @@
-package Listeners;
+package e2e.tests;
 
 import e2e.TestCase;
 import e2e.tests.BaseTest;
@@ -16,24 +16,19 @@ import static utils.Utilities.getScreenShot;
 public class TestNGListeners extends BaseTest implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
-        System.out.println("The test: " + result.getName() + "start");
+        System.out.println("The test: " + result.getName() + " start");
     }
     @Override
     public void onTestSuccess(ITestResult result) {
-        System.out.println("##########The test: " + result.getName() + "succeed");
-        report.log("**********The test: " + result.getName()+ " succeed", Enums.Status.success);
-//        getScreenShot(page, "succeed");
-//        report.addImage(new File("./snapshot/succeed.png"), "succeed");
+        report.log("The test: " + result.getName()+ " succeed", Enums.Status.success);
+        getScreenShot(page, result.getName()+"succeed");
+        report.addImage(new File("./snapshot/"+result.getName()+"succeed.png"), "succeed");
     }
     @Override
     public void onTestFailure(ITestResult result) {
-        System.out.println("########The test: " + result.getName() + "failed");
-//        getScreenShot(page, "failed");
-//        report.addImage(new File("./snapshot/failed.png"), "failed");
-        String exceptionMsg = Arrays.toString(result.getThrowable().getStackTrace());
-        report.log("*********The test: " + result.getName() + " failed", Enums.Status.failure);
-//        getScreenShot(page, "faild");
-//        report.addImage(new File("./snapshot/faildccccced.png"), "Login page");
+        report.log("The test: " + result.getName() + " failed", Enums.Status.failure);
+        getScreenShot(page, result.getName()+"failed");
+        report.addImage(new File("./snapshot/"+result.getName()+"failed.png"), "failed");
     }
     @Override
     public void onTestSkipped(ITestResult result) {
@@ -49,11 +44,11 @@ public class TestNGListeners extends BaseTest implements ITestListener {
     }
     @Override
     public void onStart(ITestContext context) {
-        System.out.println("now it start" + context.getName());
+        System.out.println("The test"+context.getName()+" is start");
     }
     @Override
     public void onFinish(ITestContext context) {
-        System.out.println("############the test is finish");
+        System.out.println("The test"+context.getName()+" is finish");
 
 
     }
