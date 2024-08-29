@@ -4,12 +4,7 @@ import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 import il.co.topq.difido.model.Enums;
-import org.config.AutoConfig;
 import utils.TestCase;
-
-import java.io.File;
-
-import static utils.Utilities.getScreenShot;
 
 public class LoginPage extends TestCase {
 
@@ -27,12 +22,12 @@ public class LoginPage extends TestCase {
 
     }
 
-    public void typeUsername(String user){
+    public void enterUsername(String user){
         username.fill(user);
         report.log("Type into username field", Enums.Status.success);
     }
 
-    public void typePassword(String pass){
+    public void enterPassword(String pass){
         password.fill(pass);
         report.log("Type into password field", Enums.Status.success);
     }

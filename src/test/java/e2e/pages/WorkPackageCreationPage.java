@@ -26,7 +26,7 @@ public class WorkPackageCreationPage extends TestCase {
         this.successfulMsg = page.locator("//p/span[text() ='Successful creation.']");
     }
 
-    public void typeSubject(){
+    public void enterSubject(){
         subjectField.fill("automation test");
         report.log("Type into subject field", Enums.Status.success);
         getScreenShot(page, "createWorkPackage");

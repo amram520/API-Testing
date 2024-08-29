@@ -84,7 +84,7 @@
     <dependency>
         <groupId>org.aeonbits.owner</groupId>
         <artifactId>owner</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.12</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/com.networknt/json-schema-validator -->
     <dependency>
@@ -113,6 +113,17 @@
                 <configuration>
                     <source>17</source>
                     <target>17</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <suiteXmlFile>${suiteFile}</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>

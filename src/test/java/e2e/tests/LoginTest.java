@@ -1,18 +1,15 @@
 package e2e.tests;
 
-import com.microsoft.playwright.Page;
 import e2e.pages.LoginPage;
 import il.co.topq.difido.model.Enums;
-import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
 import java.io.File;
-import java.nio.file.Paths;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static utils.Utilities.getScreenShot;
 
-public class LoginTest extends configTest{
+public class LoginTest extends BaseTest{
 
     LoginPage loginPage;
 
@@ -24,8 +21,8 @@ public class LoginTest extends configTest{
         report.addImage(new File("./snapshot/loginPage.png"), "Login page");
         report.startLevel("Performing login");
         loginPage = new LoginPage(page);
-        loginPage.typeUsername(cfg.openProjectUsername());
-        loginPage.typePassword(cfg.openProjectPassword());
+        loginPage.enterUsername(cfg.openProjectUsername());
+        loginPage.enterPassword(cfg.openProjectPassword());
         loginPage.clickSignInButton();
         assertThat(page).hasTitle("OpenProject");
         getScreenShot(page, "homePage");

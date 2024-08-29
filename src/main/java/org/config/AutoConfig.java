@@ -1,12 +1,14 @@
 package org.config;
 
+
 import org.aeonbits.owner.Config;
 
 @Config.Sources({"file:config.properties"})
 public interface AutoConfig extends Config {
 
+    String environment();
     @Key("base.url")
-    @DefaultValue("http://localhost:8080/api/v3/")
+    @Config.DefaultValue("http://localhost:8080/api/v3/")
     String baseUrl();
 
     @Key("api.key")
@@ -28,6 +30,6 @@ public interface AutoConfig extends Config {
     @Key("openProject.password")
     String openProjectPassword();
 
-    @Key(("openProject.url"))
+    @Key(("${environment}.url"))
     String url();
 }

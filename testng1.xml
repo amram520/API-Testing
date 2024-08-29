@@ -4,14 +4,9 @@
     <listeners>
         <listener class-name="Listeners.TestNGListeners"/>
     </listeners>
-    <test name = "Login test">
-        <classes>
-            <class name ="e2e.tests.DeleteProjectTest"/>
-        </classes>
-    </test>
     <test name = "Create work package test">
         <classes>
-            <class name ="e2e.tests.CreateWorkPackageTest"/>
+            <class name ="e2e.tests.DeleteProjectTest"/>
         </classes>
     </test>
 </suite>

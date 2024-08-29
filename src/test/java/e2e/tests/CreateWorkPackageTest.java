@@ -10,7 +10,7 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 import static org.matcher.ProjectAssertions.assertThat;
 import static utils.Utilities.getScreenShot;
 
-public class CreateWorkPackageTest extends configTest{
+public class CreateWorkPackageTest extends BaseTest{
     LoginPage loginPage;
     HomePage homePage;
     ProjectPage projectPage;
@@ -26,8 +26,8 @@ public class CreateWorkPackageTest extends configTest{
         report.addImage(new File("./snapshot/loginPage.png"), "Login page");
         report.startLevel("Performing login");
         loginPage = new LoginPage(page);
-        loginPage.typeUsername(cfg.openProjectUsername());
-        loginPage.typePassword(cfg.openProjectPassword());
+        loginPage.enterUsername(cfg.openProjectUsername());
+        loginPage.enterPassword(cfg.openProjectPassword());
         loginPage.clickSignInButton();
         assertThat(page).hasTitle("OpenProject");
         getScreenShot(page, "homePage");
@@ -36,6 +36,7 @@ public class CreateWorkPackageTest extends configTest{
         report.logHtml("<b>Step 2 - Select project</b>", Enums.Status.in_progress);
         homePage = new HomePage(page);
         report.startLevel("Performing navigation to project page");
+        homePage.clickOnSelectProject();
         homePage.selectProject("TestProject1");
         projectPage = new ProjectPage(page);
         assertThat(projectPage.validateNavigation()).isEqualTo("TestProject1");
@@ -54,7 +55,7 @@ public class CreateWorkPackageTest extends configTest{
         workPackagesPage.selectworkPackagetype("Task");
         workPackageCreationPage = new WorkPackageCreationPage(page);
         assertThat(workPackageCreationPage.validateNavigation()).isEqualTo("People");
-        workPackageCreationPage.typeSubject();
+        workPackageCreationPage.enterSubject();
         workPackageCreationPage.clickSave();
         assertThat(workPackageCreationPage.validateCreation()).contains("Successful creation");
         report.log("work package creation passed", Enums.Status.success);
