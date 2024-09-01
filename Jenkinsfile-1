@@ -1,24 +1,35 @@
 pipeline {
-  agent none
+  agent any
+  tools {
+          // Install the Maven version configured as "M3" and add it to the path.
+          maven "mvn2"
+      }
+
   stages {
     stage('build') {
       parallel {
         stage('linux-armv6') {
           agent {label 'linux-armv6'}
           steps {
-            sh 'go install dpctl'
+             git branch: 'master', url: 'https://github.com/amram520/API-Testing.git'
+                            bat "mvn clean test -DsuiteFile=testng1.xml"
+                               }
           }
         }
         stage('darwin-amd64') {
           agent {label 'darwin-amd64'}
           steps {
-            sh 'go install dpctl'
+             git branch: 'master', url: 'https://github.com/amram520/API-Testing.git'
+                            bat "mvn clean test -DsuiteFile=testng1.xml"
+                               }
           }
         }
         stage('linux-amd64') {
           agent {label 'linux-amd64'}
           steps {
-            sh 'go install dpctl'
+            git branch: 'master', url: 'https://github.com/amram520/API-Testing.git'
+                           bat "mvn clean test -DsuiteFile=testng1.xml"
+                              }
           }
         }
       }
