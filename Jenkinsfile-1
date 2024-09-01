@@ -12,7 +12,7 @@ pipeline {
           agent {label 'linux-armv6'}
           steps {
              git branch: 'master', url: 'https://github.com/amram520/API-Testing.git'
-                            bat "mvn clean test -DsuiteFile=testng1.xml"
+                            sh "mvn clean test -DsuiteFile=testng1.xml"
                                }
           }
         }
@@ -20,7 +20,7 @@ pipeline {
           agent {label 'darwin-amd64'}
           steps {
              git branch: 'master', url: 'https://github.com/amram520/API-Testing.git'
-                            bat "mvn clean test -DsuiteFile=testng1.xml"
+                            sh "mvn clean test -DsuiteFile=testng1.xml"
                                }
           }
         }
@@ -28,7 +28,7 @@ pipeline {
           agent {label 'linux-amd64'}
           steps {
             git branch: 'master', url: 'https://github.com/amram520/API-Testing.git'
-                           bat "mvn clean test -DsuiteFile=testng1.xml"
+                           sh "mvn clean test -DsuiteFile=testng1.xml"
                               }
           }
         }
