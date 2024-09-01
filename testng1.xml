@@ -6,7 +6,7 @@
     </listeners>
     <test name = "Create work package test">
         <classes>
-            <class name ="e2e.tests.DeleteProjectTest"/>
+            <class name ="e2e.tests.LoginTest"/>
         </classes>
     </test>
 </suite>
