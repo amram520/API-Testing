@@ -13,13 +13,13 @@ import java.io.File;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static utils.Utilities.getScreenShot;
 
-public class DeleteProjectTest extends CreateProjectTest{
+public class DeleteProjectTest extends BaseTest{
     LoginPage loginPage;
     HomePage homePage;
     ProjectsListPage projectsList;
     DeletionProjectPage deletionProjectPage;
-
-    @Test(dependsOnMethods = { "testCreateProject" })
+//(dependsOnMethods = { "testCreateProject" })
+    @Test
     public void testDeleteProject() {
         assertThat(page).hasTitle("Sign in | OpenProject");
         report.logHtml("<b>Step 1 - Navigate to login page</b>", Enums.Status.in_progress);

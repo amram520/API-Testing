@@ -24,12 +24,12 @@ public class LoginPage extends TestCase {
 
     public void enterUsername(String user){
         username.fill(user);
-        report.log("Type into username field", Enums.Status.success);
+        report.log("Enter username", Enums.Status.success);
     }
 
     public void enterPassword(String pass){
         password.fill(pass);
-        report.log("Type into password field", Enums.Status.success);
+        report.log("Enter password", Enums.Status.success);
     }
 
     public void clickSignInButton(){
