@@ -19,7 +19,7 @@ public class DeleteProjectTest extends BaseTest{
     ProjectsListPage projectsList;
     DeletionProjectPage deletionProjectPage;
 //(dependsOnMethods = { "testCreateProject" })
-    @Test
+    @Test(invocationCount = 5)
     public void testDeleteProject() {
         assertThat(page).hasTitle("Sign in | OpenProject");
         report.logHtml("<b>Step 1 - Navigate to login page</b>", Enums.Status.in_progress);
