@@ -3,10 +3,8 @@ package e2e.pages;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
-import com.microsoft.playwright.options.KeyboardModifier;
-import com.microsoft.playwright.options.MouseButton;
 
-public class NewProjectPage {
+public class NewProjectPage extends AbstractPage{
 
     private Page page;
     private  Locator validateNavigation;
@@ -19,9 +17,9 @@ public class NewProjectPage {
         this.validateNavigation = page.getByRole(AriaRole.HEADING, new Page.GetByRoleOptions().setName("New project"));
         this.saveButton = page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Save"));
     }
-    public boolean validatenavigation(){
-        return validateNavigation.isVisible();
-    }
+//    public boolean validatenavigation(){
+//        return validateNavigation.isVisible();
+//    }
 
     public void enterNamefield(String name){
         nameField.fill(name);
@@ -30,5 +28,10 @@ public class NewProjectPage {
 
     public void clickSave(){
         saveButton.click();
+    }
+
+    @Override
+    public Boolean validateNavigation() {
+        return validateNavigation.isVisible();
     }
 }

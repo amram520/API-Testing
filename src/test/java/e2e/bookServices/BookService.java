@@ -9,7 +9,7 @@ public interface BookService {
     Call<String> booksList();
 
     @Headers("Accept: */*")
-    @GET("/booking/{id}")
+    @GET("booking/{id}")
     Call<String> bookById(@Path("id") String i);
 
     @Headers({"Content-Type: application/json","Accept: application/json"})

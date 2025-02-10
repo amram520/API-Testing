@@ -7,6 +7,7 @@ public interface PetService {
 //    @GET("pet/findByStatus")
 //    Call<PetRootResponse> addPet(@Query("status") String petStatus) ;
 
+    @Headers("Content-Type: application/json")
     @POST("pet")
     Call<String> createPet(@Body String pet);
 

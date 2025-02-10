@@ -3,9 +3,13 @@ package org.config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({"file:config.properties"})
+@Config.LoadPolicy(Config.LoadType.MERGE)
+@Config.Sources({"system:properties",
+        "system:env",
+        "file:config.properties"})
 public interface AutoConfig extends Config {
 
+    String demo();
     String environment();
     @Key("base.url")
     @Config.DefaultValue("http://localhost:8080/api/v3/")
@@ -32,4 +36,7 @@ public interface AutoConfig extends Config {
 
     @Key(("${environment}.url"))
     String url();
+
+    @Key("${demo}.tok")
+    String tok();
 }

@@ -7,7 +7,7 @@ import e2e.studentServices.StudentService;
 import lombok.SneakyThrows;
 import lombok.val;
 import org.testng.annotations.Test;
-import utils.SchemaValidator;
+import org.matcher.SchemaValidator;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

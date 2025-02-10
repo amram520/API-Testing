@@ -28,7 +28,7 @@ public class BasicAuthInterceptor extends TestCase implements Interceptor{
 //        if (response.isSuccessful()) {
 //            report.startLevel("The response received");
 //            report.log("The response was successfully received", Enums.Status.success);
-//            report.log("Response status:",response.toString());
+            report.log("Response status:",response.body().string());
 //            report.log("Response headers:",response.headers().toString());
 //            report.endLevel();
 //        }

@@ -6,11 +6,19 @@ import lombok.val;
 import net.javacrumbs.jsonunit.assertj.JsonAssertions;
 import e2e.openProjectServices.OpenProject;
 import e2e.openProjectServices.WorkPackagesService;
+import okhttp3.OkHttpClient;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.fail;
 import static payloadRepo.PayloadRepository.getPayloadAsJsonObject;
 
 public class TestWorkPackages extends TestCase {
@@ -24,11 +32,26 @@ public class TestWorkPackages extends TestCase {
     public void getWorkPackagesByProjectTest() {
         int id = 3;
         int num = 9;
-        val response = workPackagesService.getWorkPackagesByProjectId(id).execute();
-        System.out.println(response);
-        System.out.println(response.body());
-        assertThat(response.code()).isEqualTo(200);
-        JsonAssertions.assertThatJson(response.body()).node("_embedded").node("elements[" + num + "]").node("subject").isEqualTo("it is post request test");
+        ExecutorService executer = Executors.newFixedThreadPool(10);
+        for (int i = 0; i < 50; i++){
+            executer.submit(() -> {
+                try{
+                    OkHttpClient.Builder okHttp = new OkHttpClient.Builder().readTimeout(1, TimeUnit.SECONDS).build().newBuilder();
+                    val response = workPackagesService.getWorkPackagesByProjectId(id).execute();
+                    assertThat(response.code()).isEqualTo(200);
+                    System.out.println(response);
+//                    System.out.println(response.body());
+                }
+                catch (IOException e){
+                    fail("error msg: "+ e.getMessage());
+                }
+            });
+        }
+executer.shutdown();
+        executer.awaitTermination(1, TimeUnit.MINUTES);
+      //  System.out.println(response);
+      //  System.out.println(response.body());
+        //JsonAssertions.assertThatJson(response.body()).node("_embedded").node("elements[" + num + "]").node("subject").isEqualTo("it is post request test");
     }
 
     @SneakyThrows

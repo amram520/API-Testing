@@ -15,7 +15,8 @@ public class LoggingInterceptor extends TestCase implements Interceptor {
    public LoggingInterceptor(){
        logger = Logger.getLogger(LoggingInterceptor.class.getName());
    }
-    @Override public Response intercept(Interceptor.Chain chain) throws IOException {
+    @Override
+    public Response intercept(Interceptor.Chain chain) throws IOException {
         Request request = chain.request();
         report.startLevel("The request sent");
         report.log(String.format("The sending url request %s ", request.url()));

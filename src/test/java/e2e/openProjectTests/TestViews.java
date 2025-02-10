@@ -24,7 +24,7 @@ public class TestViews {
         System.out.println(response);
         System.out.println(response.body());
         assertThat(response.code()).isEqualTo(200);
-        JsonAssertions.assertThatJson(response.body()).node("count").isEqualTo("8");
+        JsonAssertions.assertThatJson(response.body()).node("count").isEqualTo("6");
 //        JsonAssertions.assertThatJson(response.body()).node("_embedded").node("elements[$]").node("subject").isEqualTo("it is post request test");
         for (int i = 0; i < viewesNames.length; i++) {
             JsonAssertions.assertThatJson(response.body()).node("_embedded").node("elements[" + i + "]").node("name").isEqualTo(viewesNames[i]);

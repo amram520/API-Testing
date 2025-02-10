@@ -10,7 +10,7 @@ import java.io.File;
 
 import static utils.Utilities.getScreenShot;
 
-public class WorkPackageCreationPage extends TestCase {
+public class WorkPackageCreationPage extends AbstractPage {
 
     private Page page;
     private Locator validateNavigation;

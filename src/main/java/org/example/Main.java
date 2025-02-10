@@ -11,28 +11,38 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 
 public class Main {
     public static void main(String[] args) {
-        Playwright playwright = Playwright.create();
-            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-            Page page = browser.newPage();
-            page.navigate("http://localhost:8080/");
-            System.out.println(page.title());
-        Assert.assertEquals(page.title(), "Sign in | OpenProject");
-            page.locator("#username").fill("admin");
-           Locator pass = page.locator("id=password");
-           pass.fill("1234567890");
-           pass.press("Enter");
-            System.out.println(page.title());
-        try{assertThat(page).hasTitle("OpenProject");}
-        catch (AssertionError e){
-            e.printStackTrace();
-            System.exit(1);
-        }
-        Page.ScreenshotOptions screenshotOptions = new Page.ScreenshotOptions();
-        page.screenshot(screenshotOptions.setFullPage(true).setPath(Paths.get("./snapshot/pagePhoto.jpg")));
-        page.locator("#projects-menu").click();
-            page.close();
-            browser.close();
-            playwright.close();
+//        try (Playwright playwright = Playwright.create()) {
+//            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+//            BrowserContext context = browser.newContext();
+//
+//            // הגדר נתיב זמני להורדות
+//            Path downloadsPath = Path.get("downloads");
+////            context.setDownloadsPath(downloadsPath.toString());
+//
+//            Page page = context.newPage();
+//
+//            // האזנה לאירוע ההורדה
+//            page.onDownload(download -> {
+//                System.out.println("Download started: " + download.url());
+//
+//                // שמירה של הקובץ לנתיב מסוים
+//                Path filePath = download.saveAs(downloadsPath.resolve(download.suggestedFilename()));
+//                System.out.println("Downloaded file saved to: " + filePath);
+//
+//                // וידוא שהקובץ קיים
+//                if (filePath.toFile().exists()) {
+//                    System.out.println("File downloaded successfully.");
+//                } else {
+//                    System.out.println("File download failed.");
+//                }
+//            });
+//
+//            // פתח את הדף והורד קובץ
+//            page.navigate("https://example.com/download");
+//            page.click("a#download-link"); // שנה את הסלקטור בהתאם לצורך
+//        }
+//    }
 
-        }
     }
+}
+    

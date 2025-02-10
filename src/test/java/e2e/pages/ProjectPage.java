@@ -5,7 +5,7 @@ import com.microsoft.playwright.Page;
 import e2e.TestCase;
 import il.co.topq.difido.model.Enums;
 
-public class ProjectPage extends TestCase {
+public class ProjectPage extends AbstractPage {
 
     private Page page;
     private Locator toolBar;
@@ -22,7 +22,7 @@ public class ProjectPage extends TestCase {
         toolBar.filter(new Locator.FilterOptions().setHasText(selection)).click();
         report.log("select from tool bar", Enums.Status.success);
     }
-
+    @Override
     public String validateNavigation(){
         return validateNavigation.textContent();
     }

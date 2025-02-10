@@ -12,7 +12,7 @@ import static utils.Utilities.getScreenShot;
 
 public class CreateWorkPackageTest extends BaseTest{
     LoginPage loginPage;
-    HomePage homePage;
+//    HomePage homePage;
     ProjectPage projectPage;
     WorkPackagesPage workPackagesPage;
     WorkPackageCreationPage workPackageCreationPage;
@@ -34,10 +34,10 @@ public class CreateWorkPackageTest extends BaseTest{
         report.addImage(new File("./snapshot/homePage.png"), "Home page");
         report.endLevel();
         report.logHtml("<b>Step 2 - Select project</b>", Enums.Status.in_progress);
-        homePage = new HomePage(page);
-        report.startLevel("Performing navigation to project page");
-        homePage.clickOnSelectProject();
-        homePage.selectProject("TestProject1");
+//        homePage = new HomePage(page);
+//        report.startLevel("Performing navigation to project page");
+//        homePage.clickOnSelectProject();
+//        homePage.selectProject("TestProject1");
         projectPage = new ProjectPage(page);
         assertThat(projectPage.validateNavigation()).isEqualTo("TestProject1");
         getScreenShot(page, "projectPage");
@@ -63,4 +63,5 @@ public class CreateWorkPackageTest extends BaseTest{
         report.addImage(new File("./snapshot/successfulMsg.png"), "successfulMsg");
         report.endLevel();
     }
+
 }

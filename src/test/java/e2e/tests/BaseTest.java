@@ -1,6 +1,6 @@
 package e2e.tests;
 
-import com.microsoft.playwright.*;
+import  com.microsoft.playwright.*;
 import e2e.TestCase;
 import lombok.SneakyThrows;
 import org.config.AutoConfig;

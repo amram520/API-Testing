@@ -1,0 +1,75 @@
+{
+  "$ref": "#/definitions/Welcome10",
+  "definitions": {
+    "Welcome10": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "httpStatus": {
+          "type": "integer"
+        },
+        "error": {
+          "$ref": "#/definitions/Error"
+        }
+      },
+      "required": [
+        "category",
+        "code",
+        "error",
+        "httpStatus",
+        "message"
+      ],
+      "title": "Welcome10"
+    },
+    "Error": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "errorMessages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ErrorMessage"
+          }
+        }
+      },
+      "required": [
+        "errorMessages"
+      ],
+      "title": "Error"
+    },
+    "ErrorMessage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "originator": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "httpStatus": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "category",
+        "httpStatus",
+        "message",
+        "originator"
+      ],
+      "title": "ErrorMessage"
+    }
+  }
+}

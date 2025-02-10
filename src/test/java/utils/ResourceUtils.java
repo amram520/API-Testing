@@ -34,7 +34,7 @@ public class ResourceUtils {
     }
 
     public static void main(String[] args) throws Exception{
-        String body = new ResourceUtils().resourceToString2("Payload/userRequest.json");
+        String body = new ResourceUtils().resourceToString("Payload/userRequest.json");
         System.out.println(body);
     }
 

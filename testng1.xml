@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <suite name ="openProject tests">
-    <listeners>
-        <listener class-name="e2e.tests.TestNGListeners"/>
-    </listeners>
+<!--    <listeners>-->
+<!--        <listener class-name="e2e.tests.TestNGListeners"/>-->
+<!--    </listeners>-->
     <test name = "Create work package test">
         <classes>
-            <class name ="e2e.tests.LoginTest"/>
+            <class name ="e2e.examples.IT"/>
         </classes>
     </test>
 </suite>
